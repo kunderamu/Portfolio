@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  input, textarea, button {
+    font-size: 0.9rem;
+  }
+}
