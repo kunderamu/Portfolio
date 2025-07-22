@@ -55,8 +55,9 @@ const Home = () => {
                 justifyContent: 'center',
               }}
             >
+              {/* ✅ IMPORTANT: Ensure image name is correct and case-sensitive */}
               <img
-                src="/images/img7.JPEG"
+                src="/images/img7.jpeg"  // Make sure it's actually named "img7.jpeg" in public/images
                 alt="My Photo"
                 style={{
                   width: '100%',
@@ -69,7 +70,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Social Media with Labels */}
+            {/* Social Media */}
             <div
               style={{
                 marginTop: '1rem',
