@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  { src: '/images/img1.png', label: 'IBM Data Professional Certification' },
-  { src: '/images/img2.png', label: 'CISCO Introduction to Cyber Security' },
-  { src: '/images/img4.png', label: 'Internshala Android App Development' },
-  { src: '/images/img5.png', label: '1stop AI Internship Certificate' },
+  { src: '/images/img1.PNG', label: 'IBM Data Professional Certification' },
+  { src: '/images/img2.PNG', label: 'CISCO Introduction to Cyber Security' },
+  { src: '/images/img4.PNG', label: 'Internshala Android App Development' },
+  { src: '/images/img5.PNG', label: '1stop AI Internship Certificate' },
 ];
 
 const Gallery = () => {
@@ -12,26 +12,22 @@ const Gallery = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Set interval to change image every 8 seconds
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
       setLoaded(false);
-    }, 8000);
+    }, 8000); // Change image every 8 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div style={styles.page}>
       <div style={styles.frame}>
-        {/* Show loading message until image loads */}
-        {!loaded && (
-          <p style={styles.loading}>Loading image...</p>
-        )}
+        {!loaded && <p style={styles.loading}>Loading image...</p>}
         <img
           src={images[current].src}
           alt={images[current].label}
           onLoad={() => setLoaded(true)}
-          onError={() => setLoaded(true)} // On error also mark as loaded to hide loading
+          onError={() => setLoaded(true)} // Hide loading even if image fails to load
           style={{
             ...styles.image,
             display: loaded ? 'block' : 'none',
