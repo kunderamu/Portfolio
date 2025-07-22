@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  { src: '/images/img1.PNG', label: 'IBM Data Professional Certification' },
-  { src: '/images/img2.PNG', label: 'CISCO Introduction to Cyber Security' },
-  { src: '/images/img4.PNG', label: 'Internshala Android App Development' },
-  { src: '/images/img5.PNG', label: '1stop AI Internship Certificate' },
+  { src: '/images/img1.png', label: 'IBM Data Professional Certification' },
+  { src: '/images/img2.png', label: 'CISCO Introduction to Cyber Security' },
+  { src: '/images/img4.png', label: 'Internshala Android App Development' },
+  { src: '/images/img5.png', label: '1stop AI Internship Certificate' }
 ];
 
 const Gallery = () => {
@@ -15,7 +15,8 @@ const Gallery = () => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
       setLoaded(false);
-    }, 8000); // Change image every 8 seconds
+    }, 8000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -27,7 +28,7 @@ const Gallery = () => {
           src={images[current].src}
           alt={images[current].label}
           onLoad={() => setLoaded(true)}
-          onError={() => setLoaded(true)} // Hide loading even if image fails to load
+          onError={() => setLoaded(true)}
           style={{
             ...styles.image,
             display: loaded ? 'block' : 'none',
